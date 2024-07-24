@@ -1,0 +1,161 @@
+%%% Bibus package
+%
+% Copyright (c) 2024 Benjamin Somers, All rights reserved.
+%
+% Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+%
+%     Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+%     Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+%     Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+%
+% THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{bibus}[Bibus lines]
+\RequirePackage{xcolor}
+\RequirePackage{tikz}
+\RequirePackage[medium, scaled=.9]{inter}
+
+% Colors and TikZ styles
+\definecolor{@bibus@line@1}{HTML}{E9474F}
+\tikzstyle{@bibus@line@1} = []
+\definecolor{@bibus@line@2a}{HTML}{EBAE06}
+\tikzstyle{@bibus@line@2a} = [text=white!10!black]
+\definecolor{@bibus@line@2b}{HTML}{FFCC03}
+\tikzstyle{@bibus@line@2b} = [text=white!10!black]
+\definecolor{@bibus@line@3}{HTML}{ED6C18}
+\tikzstyle{@bibus@line@3} = []
+\definecolor{@bibus@line@4}{HTML}{65378D}
+\tikzstyle{@bibus@line@4} = []
+\definecolor{@bibus@line@5}{HTML}{BA8EC0}
+\tikzstyle{@bibus@line@5} = [text=white!10!black]
+\definecolor{@bibus@line@6}{HTML}{E99BC3}
+\tikzstyle{@bibus@line@6} = [text=white!10!black]
+\definecolor{@bibus@line@10}{HTML}{174D7A}
+\tikzstyle{@bibus@line@10} = []
+\definecolor{@bibus@line@11}{HTML}{8397B1}
+\tikzstyle{@bibus@line@11} = []
+\definecolor{@bibus@line@12}{HTML}{3789A5}
+\tikzstyle{@bibus@line@12} = []
+\definecolor{@bibus@line@13}{HTML}{13558E}
+\tikzstyle{@bibus@line@13} = []
+\definecolor{@bibus@line@14}{HTML}{2E835D}
+\tikzstyle{@bibus@line@14} = []
+\definecolor{@bibus@line@15}{HTML}{13999A}
+\tikzstyle{@bibus@line@15} = []
+\definecolor{@bibus@line@16}{HTML}{329542}
+\tikzstyle{@bibus@line@16} = []
+\definecolor{@bibus@line@17}{HTML}{66B332}
+\tikzstyle{@bibus@line@17} = []
+\definecolor{@bibus@line@18}{HTML}{719F2E}
+\tikzstyle{@bibus@line@18} = []
+\definecolor{@bibus@line@19}{HTML}{B3B113}
+\tikzstyle{@bibus@line@19} = []
+\definecolor{@bibus@line@20}{HTML}{BD455E}
+\tikzstyle{@bibus@line@20} = []
+\definecolor{@bibus@line@21}{HTML}{91ADDB}
+\tikzstyle{@bibus@line@21} = []
+\definecolor{@bibus@line@22}{HTML}{6190CB}
+\tikzstyle{@bibus@line@22} = []
+\definecolor{@bibus@line@23}{HTML}{567EBF}
+\tikzstyle{@bibus@line@23} = []
+\definecolor{@bibus@line@25}{HTML}{93C24D}
+\tikzstyle{@bibus@line@25} = []
+\definecolor{@bibus@line@26}{HTML}{659966}
+\tikzstyle{@bibus@line@26} = []
+\definecolor{@bibus@line@27}{HTML}{5C9231}
+\tikzstyle{@bibus@line@27} = []
+\definecolor{@bibus@line@31}{HTML}{F29EBE}
+\tikzstyle{@bibus@line@31} = []
+\definecolor{@bibus@line@40}{HTML}{E8AF17}
+\tikzstyle{@bibus@line@40} = [text=white!10!black]
+\definecolor{@bibus@line@41}{HTML}{B98112}
+\tikzstyle{@bibus@line@41} = [text=white!10!black]
+\definecolor{@bibus@line@42}{HTML}{F3E214}
+\tikzstyle{@bibus@line@42} = [text=white!10!black]
+\definecolor{@bibus@line@43}{HTML}{F1BC75}
+\tikzstyle{@bibus@line@43} = [text=white!10!black]
+\definecolor{@bibus@line@44}{HTML}{AC568B}
+\definecolor{@bibus@line@45}{HTML}{E9CAE0}
+\tikzstyle{@bibus@line@45} = [text=white!10!black]
+\definecolor{@bibus@line@46}{HTML}{89AFBC}
+\tikzstyle{@bibus@line@46} = []
+\definecolor{@bibus@line@50}{HTML}{E79E28}
+\tikzstyle{@bibus@line@50} = []
+\definecolor{@bibus@line@51}{HTML}{45BCE2}
+\tikzstyle{@bibus@line@51} = []
+\definecolor{@bibus@line@52}{HTML}{007A84}
+\tikzstyle{@bibus@line@52} = []
+\definecolor{@bibus@line@55}{HTML}{428571}
+\tikzstyle{@bibus@line@55} = []
+\definecolor{@bibus@line@56}{HTML}{CCE1DE}
+\tikzstyle{@bibus@line@56} = []
+\definecolor{@bibus@line@60}{HTML}{A3BBC6}
+\tikzstyle{@bibus@line@60} = []
+\definecolor{@bibus@line@61}{HTML}{8ACEEF}
+\tikzstyle{@bibus@line@61} = []
+\definecolor{@bibus@line@65}{HTML}{BE575F}
+\tikzstyle{@bibus@line@65} = []
+\definecolor{@bibus@line@66}{HTML}{DD5873}
+\tikzstyle{@bibus@line@66} = []
+\definecolor{@bibus@line@67}{HTML}{793443}
+\tikzstyle{@bibus@line@67} = []
+\definecolor{@bibus@line@68}{HTML}{B53058}
+\tikzstyle{@bibus@line@68} = []
+\definecolor{@bibus@line@69}{HTML}{E0BEC8}
+\tikzstyle{@bibus@line@69} = []
+\definecolor{@bibus@line@70}{HTML}{E88390}
+\tikzstyle{@bibus@line@70} = []
+\definecolor{@bibus@line@71}{HTML}{D62A65}
+\tikzstyle{@bibus@line@71} = []
+\definecolor{@bibus@line@72}{HTML}{C35857}
+\tikzstyle{@bibus@line@72} = []
+\definecolor{@bibus@line@75}{HTML}{862A4B}
+\tikzstyle{@bibus@line@75} = []
+\definecolor{@bibus@line@76}{HTML}{BE4F90}
+\tikzstyle{@bibus@line@76} = []
+\definecolor{@bibus@line@77}{HTML}{834277}
+\tikzstyle{@bibus@line@77} = []
+\definecolor{@bibus@line@78}{HTML}{926A97}
+\tikzstyle{@bibus@line@78} = []
+\definecolor{@bibus@line@80}{HTML}{826E89}
+\tikzstyle{@bibus@line@80} = []
+\definecolor{@bibus@line@81}{HTML}{644370}
+\tikzstyle{@bibus@line@81} = []
+\definecolor{@bibus@line@90}{HTML}{B6C6E6}
+\tikzstyle{@bibus@line@90} = []
+\definecolor{@bibus@line@91}{HTML}{B6C6E6}
+\tikzstyle{@bibus@line@91} = []
+\definecolor{@bibus@line@92}{HTML}{B6C6E6}
+\tikzstyle{@bibus@line@92} = []
+\definecolor{@bibus@line@93}{HTML}{B6C6E6}
+\tikzstyle{@bibus@line@93} = []
+\definecolor{@bibus@line@94}{HTML}{B6C6E6}
+\tikzstyle{@bibus@line@94} = []
+\definecolor{@bibus@line@95}{HTML}{B6C6E6}
+\tikzstyle{@bibus@line@95} = []
+\definecolor{@bibus@line@96}{HTML}{B6C6E6}
+\tikzstyle{@bibus@line@96} = []
+\definecolor{@bibus@line@97}{HTML}{B6C6E6}
+\tikzstyle{@bibus@line@97} = []
+\definecolor{@bibus@line@A}{HTML}{DE007E}
+\tikzstyle{@bibus@line@A} = [append after command={\pgfextra%
+  \begin{scope}[line width=.15em, line cap=round, color=@bibus@line@A]
+  \draw([yshift=.1em]\tikzlastnode.250)--++(-.35em,-.25em);
+  \draw([yshift=.1em]\tikzlastnode.290)--++(.35em,-.25em);
+  \draw([yshift=.2em]\tikzlastnode.125)--++(.2em,.08em)--([xshift=-.2em,yshift=.28em]\tikzlastnode.55)--++(.2em,-.08em);
+  \draw([xshift=.2em, yshift=.28em]\tikzlastnode.125)--([yshift=-.1em]\tikzlastnode.100);
+  \draw([xshift=-.2em, yshift=.28em]\tikzlastnode.55)--([yshift=-.1em]\tikzlastnode.80);
+  \end{scope}
+\endpgfextra}]
+\definecolor{@bibus@line@C}{HTML}{EA6758}
+\tikzstyle{@bibus@line@C} = [append after command={\pgfextra%
+  \begin{scope}[line width=.15em, line cap=round, color=@bibus@line@C]
+  \draw([yshift=-.1em]\tikzlastnode.90)--++(0,.5em);
+  \draw([yshift=.2em]\tikzlastnode.117)--([yshift=.6em]\tikzlastnode.63);
+  \end{scope}
+\endpgfextra}]
+
+% Format a Bibus line ID
+\def\bibus#1{\tikz[baseline,anchor=base]{\node[fill=@bibus@line@#1, rounded corners=.4em, inner sep=0pt, text=white, @bibus@line@#1, minimum height=1.6em, minimum width=1.6em, font=\fontfamily{\inter@family}\selectfont]{#1};}}
